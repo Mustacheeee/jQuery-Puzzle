@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide puzzle</title>
+    <style>
+        body
+        {
+            text-align: center;
+            font-size: large;
+        }
+
+        #puzzleContainer
+        {
+            margin: 4em;
+            width: 429px;
+            height: 606px;
+            border: 2px solid black;
+        }
+        #wrapper
+        {
+            display: flex;
+            /* background-color: aqua; */
+        }
+        #pieceContainer
+        {
+            background-color: black;
+            position: relative;
+            width: 50%;
+        }
+        .pieces
+        {
+            width: 141px;
+            height: 200px;
+            float: left;
+            border: 1px solid rgb(0, 191, 255);
+            background-image: url(puzzleIMG.png);
+            background-repeat: no-repeat;
+        }
+        ul button
+        {
+            padding: 20px;
+            width: 150px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: pink;
+        }
+        ul{
+            display: flex;
+            margin-left: 40%;
+            margin-top: 0px;
+            list-style-type: none;
+        }
+    </style>
+
+</head>
+<body>
+    <p>Drag & Drop the puzzle pieces to the correct position</p>
+    <div id="wrapper">
+        <div id="puzzleContainer"></div>
+        <div id="pieceContainer"></div>
+    </div>
+    <ul id="buttons">
+        <li><button id="keyboard">Using Keyborad</button></li>
+        <li><button id="mouse">Using Mouse</button></li>
+    </ul>
+</body>
+<script src="lastPuzzle.js"></script>
+</html>
