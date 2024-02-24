@@ -1,32 +1,56 @@
-let pieces =[];
 let row = 3, column = 3;
 $(document).ready(function()
 {
-    PIECES = [];
+    var puzzlePiece = "";
     for (var i = 0, top = -110; i < row; i++, top -= 199)
     {
         for (var j = 0, left = -10; j < column; j++, left -= 143)
         {
-            pieces += "<div style='background-position:" + left + "px " + top + "px;' class='pieces'></div>";
+            puzzlePiece += "<div style='background-position:" + left + "px " + top + "px;' class='pieces'></div>";
         }
     }
-    $("#puzzleContainer").html(pieces);
+    $("#puzzleContainer").html(puzzlePiece);
+
     $("#mouse").click(function(){
-        console.log("aya?")
-        var pieses = $("puzzleContainer div");
-        pieces.each(function(){
-            var rightPosition = Math.floor(Math.random() * -290) + "px";
-            var topPosition = Math.floor(Math.random() * 290) + "px";
-            $(this).css({
+        var pieces = $("#puzzleContainer div");
+        pieces.each(function()
+        { 
+            var rightPosition = Math.random() * 620 + "px";
+            var topPosition = Math.random() * 500 + "px";
+            $(this).addClass("draggablePiece").
+                css({
                 position: "absolute",
-                righ: rightPosition,
+                right: rightPosition,
                 top: topPosition
             })
             $("#pieceContainer").append($(this));
         });
+        var puzzleBackground = ""
+        for (var i = 0; i < row; i++)
+        {
+            for (var j = 0; j < column; j++)
+            {
+                puzzleBackground += "<div style='background-image: none;' class='pieces'></div>";
+            }
+        }
+        $("#puzzleContainer").html(puzzleBackground)
+        dragDrop()
     });
-});
 
+    function dragDrop()
+    {
+        $(".draggablePiece").draggable();
+        $(".droppablePiece").droppable({
+            drop: function(event, ui)
+            {
+                var draggableElement = ui.draggable;
+                var droppedOn = $(this);
+                droppedOn.addClass("dropHere")
+            }
+        });
+    }
+    
+});
 class Piece
 {
     constructor (rowIndex, colIndex)
