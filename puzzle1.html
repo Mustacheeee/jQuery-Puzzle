@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle</title>
+    <style>
+        body
+        {
+            text-align: center;
+            font-size: large;
+        }
+
+        .picture1{
+            width: 276px;
+            height: 273px;
+            display: inline-block;
+            background-position: 0px 0px;
+
+        }
+
+        .picture2{
+            width: 276px;
+            height: 273px;
+            display: inline-block;
+            background-size: 552px 820px;
+            background-position: -276px 0px;
+        }
+        .picture3{
+            width: 276px;
+            height: 273px;
+            display: inline-block;
+            background-size: 552px 820px;
+            background-position: 0px -273px;
+
+
+        }
+        .picture4{
+            width: 276px;
+            height: 273px;
+            display: inline-block;
+            background-size: 552px 820px;
+            background-position: -276px -273px;
+        }
+
+        .picture5{
+            width: 276px;
+            height: 273px;
+            display: inline-block;
+            background-size: 552px 820px;
+            background-position: 0px -546px;
+        }
+        .picture6{
+            width: 276px;
+            height: 273px;
+            display: inline-block;
+            background-size: 552px 820px;
+            background-position: -276px -546px;
+        }
+        .pieces
+        {
+            width: 141px;
+            height: 200px;
+            float: left;
+            border: 1px solid rgb(0, 191, 255);
+            background-image: url(puzzleIMG.png);
+            background-repeat: no-repeat;
+            background-size: 450px 780px;
+        }
+        ul button
+        {
+            padding: 20px;
+            width: 150px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: pink;
+        }
+        ul{
+            display: flex;
+            margin-left: 40%;
+            margin-top: 0px;
+            list-style-type: none;
+        }
+    </style>
+
+</head>
+<body>
+    <p>Press buttons to help puzzle pieces move to the correct position</p>
+    <div class="pieces picture1"></div>
+    <div class="pieces picture2"></div>
+    <div class="pieces picture3"></div>
+    <div class="pieces picture4"></div>
+    <div class="pieces picture5"></div>
+    <div class="pieces picture6 movable-picture"></div>
+
+    <ul id="controls">
+        <a href="puzzle2.html">Puzzle 2</a>
+        <li><button id="up">Up</button></li>
+        <li><button id="down">Down</button></li>
+        <li><button id="left">Left</button></li>
+        <li><button id="right">Right</button></li>
+    </ul>
+</body>
+<script src="puzzle1.js"></script>
+
+</html>

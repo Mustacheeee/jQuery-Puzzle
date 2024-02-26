@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
-    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src = "https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,7 @@
 
         #puzzleContainer
         {
-            margin: 4em;
+            margin: 40px;
             width: 429px;
             height: 606px;
             border: 2px solid black;
@@ -40,6 +39,7 @@
             border: 1px solid rgb(0, 191, 255);
             background-image: url(puzzleIMG.png);
             background-repeat: no-repeat;
+            background-size: 450px 780px;
         }
         ul button
         {
@@ -64,9 +64,10 @@
         <div id="pieceContainer"></div>
     </div>
     <ul id="buttons">
-        <li><button id="keyboard">Using Keyborad</button></li>
-        <li><button id="mouse">Using Mouse</button></li>
+        <a href="puzzle1.html">Puzzle 1</a>
+        <li><button id="mouse">Start</button></li>
     </ul>
 </body>
-<script src="lastPuzzle.js"></script>
+<script src="puzzle2.js"></script>
+
 </html>

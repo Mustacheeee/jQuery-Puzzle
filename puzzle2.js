@@ -1,6 +1,8 @@
 let row = 3, column = 3;
+
 $(document).ready(function()
 {
+    // cut img to 3x3 pieces
     var puzzlePiece = "";
     for (var i = 0, top = -110; i < row; i++, top -= 199)
     {
@@ -10,6 +12,7 @@ $(document).ready(function()
         }
     }
     $("#puzzleContainer").html(puzzlePiece);
+
 
     $("#mouse").click(function(){
         var pieces = $("#puzzleContainer div");
@@ -30,32 +33,31 @@ $(document).ready(function()
         {
             for (var j = 0; j < column; j++)
             {
-                puzzleBackground += "<div style='background-image: none;' class='pieces'></div>";
+                puzzleBackground += "<div style='background-image: none;' class='pieces dropHere'></div>";
             }
         }
         $("#puzzleContainer").html(puzzleBackground)
         dragDrop()
     });
 
+    // hold the pieces when droped
     function dragDrop()
     {
         $(".draggablePiece").draggable();
-        $(".droppablePiece").droppable({
+        $(".dropHere").droppable({
             drop: function(event, ui)
             {
                 var draggableElement = ui.draggable;
                 var droppedOn = $(this);
-                droppedOn.addClass("dropHere")
+                droppedOn.addClass("piecePresent");
+                $(draggableElement).addClass("dropped").css({
+                    top: 0,
+                    left: 0,
+                    buttom: 0,
+                    position:"relative"
+                }).appendTo(droppedOn);
             }
         });
     }
     
 });
-class Piece
-{
-    constructor (rowIndex, colIndex)
-    {
-        this.rowIndex = rowIndex;
-        this.colIndex = colIndex;
-    }
-}
